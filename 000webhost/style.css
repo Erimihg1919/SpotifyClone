@@ -1,0 +1,564 @@
+    * {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        margin: 0;
+        scroll-behavior: smooth;
+    }
+    *::-webkit-scrollbar {
+        display: none;
+    }
+    *::-webkit-progress-bar{
+        border: 2px solid red;
+        width: 40px;
+    }
+
+
+    -webkit-scrollbar{
+        display: none;
+    }
+
+    a{text-decoration: none;}
+
+    body {
+        background-color: black;
+        overflow: hidden;
+    }
+
+    .mainContainer {
+        display: flex;
+        gap: 10px;
+        margin: 10px;
+        overflow: hidden;
+    }
+
+
+    .mainleft {
+        position: fixed;
+        /* top: 0; */
+        left: 0;
+        width: 310px;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        z-index: 3;
+        background-color: rgba(29, 25, 25, 0.623);
+        height: 100vh;
+        transition:left 1s ease;
+        
+    }
+
+    .mainright {
+        /* border: 2px solid red; */
+        width: calc(100% - 330px);
+        position:absolute;
+        /* top: 0; */
+        right: 0;
+        overflow:scroll;
+        height: 100vh;
+        border-radius: 7px 0px;
+        
+    }
+
+    .ml1,
+    .ml2 {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-left: 13px;
+        border-radius: 7px;
+    }
+
+    .card1 {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 1000;
+        padding: 10px;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.479);
+        transition: .3s ease;
+
+
+    }
+    .home{
+        color:white;
+    }
+    .card1:hover{
+        color: white;
+    }
+    .search:hover{
+        text-decoration: underline;
+
+    }
+
+    .plusicon{
+        margin-left: 85px;
+        font-size: 30px;
+        padding: 0; 
+    }
+
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .sigmafy{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        font-weight: 800;
+        padding: 10px;
+    }
+    .logo img ,.logo span{
+        cursor: pointer;
+        
+    }
+    .logo img {
+        filter: invert(100%);
+
+    }
+    .close img{
+        filter: invert(0%);
+        display: none;
+    }
+
+    .bg-grey {
+        background-color: rgba(29, 25, 25, 0.623);
+    }
+    .loginbar{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 7px 0px;
+        width: 79%;
+        z-index: 1;
+        background-color: black;
+    }
+
+    .arrow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:5px;
+        font-size: 25px;
+        padding: 15px;
+    }
+
+    .arrowleft,.arrowright{
+        background-color: black;
+        border-radius: 50%;
+        padding: 0px 9px;
+    }
+    .hamburger{
+        display: none;
+        filter: invert(100%);
+    }
+    .navright{
+        display: flex;
+        gap: 20px;
+    }
+    .navitems{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+    }
+    .seperator{
+        display: flex;
+        font-size: 25px;
+        align-items: center;
+
+    }
+    .navitems a{
+        text-decoration: none;
+        font-weight: 1000;
+    }
+    .buttons{
+        display: flex;
+        font-weight: bolder;
+    }
+    .btns1{
+        padding: 11px 18px;
+        border-radius: 20px;
+        margin-right: 15px;
+    }
+    .login{
+        background-color: white;
+        color: black;
+
+    }
+    .spotify-display{
+        border-radius: 7px 0px;
+        position: relative;
+        margin-top: 60px;
+        background-color: rgb(78 70 70 / 31%);
+    }
+    .displayHead{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 18px 5px 28px;
+        align-items: center;
+        
+    }
+    .headleft{
+        font-size: 20px;
+        font-weight:bolder;
+    }
+    .headright{
+        font-size: small;
+    }
+
+    .displaybody{
+        display: flex;
+        margin: 13px;
+        flex-wrap: wrap;
+        /* min-height: 90vh; */
+        overflow-y: hidden;
+        justify-content: space-between;
+    }
+    .displaybodybg{
+        min-height: 84.1vh;
+        margin: 13px;
+
+
+    }
+    .playcard{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 175px;
+        height: 240px;
+        /* border: 2px solid red;    */
+        border-radius: 10px;
+        margin: 10px 10px;
+        background-color: rgb(78 70 70 / 20%);
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .play_playcard{
+        display: flex;    
+        position:absolute;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        right: 15px;
+        border-radius: 50%;
+        background-color: rgb(45 195 45 / 99%);
+        bottom: 82px;
+        opacity: 0;
+        transition: .3s ease;
+    }
+    .playcard:hover{
+        background-color:rgba(78, 70, 70, 0.51)
+    }
+    .playcard:hover{
+
+        .play_playcard{
+            opacity: 1;
+            display: flex;
+            bottom: 95px;
+        }
+
+    }
+    .playcardImage{
+        width: 180px;
+        height: 150px;
+        overflow: hidden;
+        position: absolute ;
+        top: 10px;
+        border-radius:25px;
+
+    }
+    .playcardImage img{
+        object-fit: cover;
+        width: 160px;
+        height: 150px;
+        padding: 10px;
+        margin-top: -30px;
+        /* border-radius:16px; */
+    }
+    .playcardText{
+        display: flex;
+        flex-direction: column  ;
+        gap: 5px;
+        top: 64px;
+        align-items: center;
+        position: relative;
+        
+    }
+    .playcardTextHead{
+        text-align: center;
+        font-weight: bold;
+        width: 90%;
+        font-size: 17px;
+        overflow: hidden;
+    }
+    .playcardTextDisc{
+        font-size: 12px;
+    }
+    .footer{
+        width: 78%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        background-color:  rgba(71, 40, 107, 0.829);
+        color:white;
+        border-radius: 20px;
+        justify-content: flex-end; 
+        height: 90px;
+        /* align-items: center; */
+    }
+    .footermiddle{
+        display: flex;
+        /* justify-content: space-around; */
+        position: absolute;
+        bottom: 45px;
+        width: 100%;
+        height: 30px;
+        overflow: hidden;
+        margin: auto;
+        /* border: 2px solid green; */
+    }
+    .seekbardown{
+        position: absolute;
+        height: 10px;
+        width: 99%;
+        margin-left: .5%;
+        border-radius: 20px;
+        margin-top: 2px;
+        /* bottom: 49px; */
+        bottom: 79px;
+        z-index: 1;
+        background-color: white;
+    }
+    .seekbarinside{
+        z-index: 2;
+        background-color: yellow;
+        position: absolute;
+        height: 10px;
+        margin-left: .5%;
+        border-radius: 20px;
+        margin-top: 2px;
+        /* bottom: 49px; */
+        bottom: 79px;
+        width: 0%;
+        transition: width .5s;
+
+
+    }
+    .seekbar{
+        position: absolute;
+        height: 15px;
+        width: 99%;
+        margin-left: .5%;
+        border-radius: 20px;
+        margin-top: 2px;
+        /* bottom: 49px; */
+        bottom: 79px;
+        z-index: 3;
+        /* background-color: red; */
+        cursor: pointer;
+    }
+
+    .circle{
+        height: 15px;
+        width: 15px;
+        position: absolute;
+        background-color: yellow;
+        border-radius: 50%;
+        bottom: -2px;
+        left: 0;
+        transition: left .5s;
+    }
+    .lsongname{
+        color: black;
+        padding: 5px;
+        font-weight: bolder;
+        /* border: 2px solid red; */
+        width: max-content;
+    }
+    .lsongbox{
+        width: calc(100% - 160px);
+        overflow: hidden;
+    }
+    .footer_down{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+
+
+    }
+    .footer_down_firsthalf{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footercontrols{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        gap: 20%;
+    }
+    .footercontrols img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        padding: 4px 6px;
+        cursor: pointer;
+        transition: .2s ease;
+    }
+    .footercontrols img:hover{
+        background-color: rgba(128, 128, 128, 0.5);
+
+    }
+    .footer_down_secondhalf{
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .volumeseekbarall{
+        display: flex;
+        align-items: center;
+        /* justify-content: center;    */
+        width:88px ; 
+    }
+    .volumeseekbardown{
+        position: absolute;
+        height: 10px;
+        width: 88px;
+        border-radius: 20px;
+        z-index: 1;
+        background-color: white;
+    }
+    .volumeseekbarinside{
+        z-index: 2;
+        background-color: yellow;
+        width: 88px;
+        position: absolute;
+        height: 10px;
+        border-radius: 20px;
+        transition: width .5s;
+
+    }
+    .volumeseekbar{
+        position: absolute;
+        width: 88px;
+        height: 15px;
+        border-radius: 20px;
+        z-index: 3;
+        /* background-color: red; */
+        cursor: pointer;
+    }
+    .volumecircle{
+        height: 15px;
+        width: 15px;
+        position: absolute;
+        background-color: yellow;
+        border-radius: 50%;
+        left: 94%;
+        /* left: 0%; */
+        transition: left .5s;
+    }
+    .volume{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 146px;
+        /* border: 2px solid red; */
+
+    }
+    #volumeimg{
+        cursor: pointer;
+    }
+
+    .currentTime,.totalTime{
+        font-weight: bolder;
+        color: black;
+        margin: 0px 20px;
+        width: 26px;
+    }
+
+    .mainright,.loginbar,.footer{
+        width: calc(100% - 330px);}
+    /* responsiveness */
+
+    /* @media(min-width:1606px){
+        .mainright,.loginbar,.footer{
+            width: calc(100% - 330px);
+            
+        }
+    } */
+
+    @media(max-width:526px){
+    .displaybody{
+        justify-content: space-around;
+    }
+
+    }
+    @media(max-width:926px){
+    .mainleft{
+        left:-312px;
+
+    }
+    .mainright,.loginbar,.footer{
+        width: 100%;
+    }
+    .hamburger{
+        display: flex;
+    }
+    .close img{
+        display: flex;
+    }
+    }
+
+
+    /*resources */
+    .scroll-text {
+        text-align: right;
+        /* animation properties */
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        
+        -moz-animation: my-animation 15s linear infinite;
+        -webkit-animation: my-animation 15s linear infinite;
+        animation: my-animation 15s linear infinite;
+    }
+    
+    /* for Firefox */
+    @-moz-keyframes my-animation {
+        from { -moz-transform: translateX(-100%); }
+        to { -moz-transform: translateX(100%); }
+    }
+    
+    /* for Chrome */
+    @-webkit-keyframes my-animation {
+        from { -webkit-transform: translateX(-100%); }
+        to { -webkit-transform: translateX(100%); }
+    }
+    
+    @keyframes my-animation {
+        from {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        }
+        to {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        }
+    }
